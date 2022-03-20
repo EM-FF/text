@@ -1,0 +1,105 @@
+public class MaZe{
+
+	public static void main(String[] args) {
+		
+
+		//创建迷宫,二维数组[8][7]
+		//map值0表示可以走，1表示无法通过
+
+		int[][] map = new int[8][7];
+
+		//上下边界为1
+		for(int i = 0; i < 7; i++){
+			map[0][i] = 1;
+			map[7][i] = 1;
+		}
+		//左右边界为1
+		for(int j = 1; j < 8; j++ ){
+			map[j][0] = 1;
+			map[j][6] = 1;
+		}
+		map[3][1] = 1;
+		map[3][2] = 1;
+
+		//out
+		System.out.println("--------map--------");
+		for(int i = 0; i < map.length; i++){
+			for(int j = 0; j < map[0].length; j++){
+				System.out.print(map[i][j]);
+			}
+			System.out.println();
+		}
+
+		T t1 = new T();
+		t1.findWay(map, 1, 1);
+		System.out.println("--------road--------");
+		for(int i = 0; i < map.length; i++){
+			for(int j = 0; j < map[0].length; j++){
+				System.out.print(map[i][j]);
+			}
+			System.out.println();
+		}
+
+	}
+
+}
+
+class T {
+
+	//递归回溯思想
+
+	//findWay 方法找出迷宫的路径
+	//如果找到，返回true，否则false
+	//map[][]表示迷宫
+	//map[i][j]表示老鼠位置，（1，1）初始位置
+	//定义状态 0可以走 	1有障碍物 	2可以走，且走过 	3走过，但不通
+	//方向优先级：下->右->上->左
+	public boolean findWay(int[][] map, int i, int j) {
+
+		if(map[6][5] == 2) return true; //找到
+
+		else {
+			if(map[i][j] == 0){//当前位置为0可以走
+				//假设通过该位置是可以走向终点
+				map[i][j] = 2;
+				//使用找路策略，确定该位置是否可以走通
+				if(findWay(map, i + 1, j))return true;//下
+
+				else if(findWay(map, i, j + 1))return true;//右
+
+				else if(findWay(map, i - 1, j))return true;//左
+
+				else if(findWay(map, i, j - 1))return true;//左
+
+				else map[i][j] = 3;//该位置走不通
+			}
+
+			else return false;//1或3都走不通
+
+		}
+		return false;
+	}
+
+
+
+}
+
+
+--------map--------
+1111111
+1000001
+1000001
+1110001
+1000001
+1000001
+1000001
+1111111
+--------road--------
+1111111
+1200001
+1222001
+1112001
+1002001
+1002001
+1002221
+1111111
