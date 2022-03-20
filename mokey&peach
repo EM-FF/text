@@ -1,0 +1,31 @@
+public class Recursion02{
+
+	public static void main(String[] args){
+		T t1 = new T();
+		int res = t1.numPeach(10);
+		System.out.println(res);
+		int res02 = t1.numPeach02(10);
+		System.out.println(res02);
+	}
+}
+
+class T {
+	//一堆桃子，猴子第10天吃一半，又多吃一个，第九天照样，直到第一天桃子剩一个
+	//总共多少桃子
+	//找数学关系 设f(n)为第n天剩下桃子数量 f(n) = (f(n-1) + 1) * 2
+
+	public int numPeach(int n){
+		if(n == 1)return 1;
+		else return (numPeach(n-1) + 1) * 2; 
+
+	}
+
+	public int numPeach02(int n){
+		int a = 1, num = 0;
+		for(int j = 1; j < n; j++){
+			num = (a + 1) * 2;
+			a = num;
+		}
+		return num;
+	}
+}
