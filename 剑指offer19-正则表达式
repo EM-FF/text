@@ -1,0 +1,38 @@
+class Solution{
+
+	public boolean isMatch(String s,String p){
+		int m = s.length() + 1, n = p.length() + 1;
+		//使dp的下标与s，p下标对齐
+		s = " " + s;
+		p = " " + p;
+		
+		boolean[][] dp = new boolean[m][n];
+		//s = " ",p=" "，空字符能匹配成功
+		dp[0][0] = true;
+		//初始化首行 s = " ",只有当p的偶数位为*才可以匹配成功 如a*a*
+		for(int j = 2;j < n; j++){
+			dp[0][j] = dp[0][j-2] && p.charAt(j) == '*';
+		}
+
+		//s前i个字符与p前j个字符是否能匹配上
+		for(int i = 1; i < m; i++){
+			for(int j = 1; j < n; j++){
+				if(p.charAt(j) == '*'){
+					//p[j-1]* 取0次   s = a  p = ab*
+					if(dp[i][j-2])dp[i][j] = dp[i][j-2];
+					//让p[j-1]* 取两次或取一次  s = aaa p = aa*/a.*   or s = aa   p = aa*/a.*
+					else if(dp[i-1][j] && (s.charAt(i) == p.charAt(j-1) || p.charAt(j-1) == '.'))
+						dp[i][j] = true;
+				}
+				else{
+					//普通字符或'.'的匹配，匹配时，除了配对s[i]==p[j]外，还应检查s[:i]能否与p[:j]配对
+					//即检查dp[i-1][j-1]是否为true
+					//s[i]和p[j]为相同字母或p[j]='.'可以配对任意字母
+					if(dp[i-1][j-1] && (s.charAt(i) == p.charAt(j) || p.charAt(j) == '.'))dp[i][j] = true;
+				}
+			}
+		}
+		return dp[m][n];
+	}
+}
+
