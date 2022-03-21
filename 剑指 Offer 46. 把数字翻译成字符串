@@ -1,0 +1,22 @@
+class Solution{
+
+	public int translateNum(int num){
+		//状态定义：num是一个数字，xi表示第几位上的数字。dp[i]表示以xi结尾的连续数字翻译方案数量
+		//转移方程：dp[i] = dp[i-1] + dp[i-2] if 0<=(dp[i-1] * 10 + dp[i-2])<=25 else dp[i-1]
+		//初始状态：dp[0] = dp[1] = 1,'无数字'和'第一位数字'都是一个方案
+		//返回值：dp[n]
+		//因为dp[i]只与dp[i-1]和xi有关，所以可以用2个变量来表示
+		int a = 1, b = 1, x, y = num % 10;//y为num从右往左的第一个数字
+		while(num > 9){//num为0，结束，或在0-9，也只有一种翻译情况
+			num /= 10;
+			x = num % 10;//第二数字 第三...
+			int tmp = 10 * x + y;//xi-1,xi-2是否可以为整体
+			int c = (tmp >= 10 && tmp <= 25)? a + b : a;//c dp[i] a dp[i-1] b dp[i-2]
+			b = a;
+			a = c;
+			y = x;
+		}
+		return a;
+
+	}
+}
