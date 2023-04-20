@@ -1,9 +1,39 @@
-<mxfile host="app.diagrams.net" modified="2023-04-20T08:55:44.135Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.39" version="21.2.0" etag="K5WgWVJKqcBvv9d77HXJ" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-20T13:24:44.937Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.39" etag="TIF0uG5jc_cP8xHGyNjm" version="21.2.0" type="github">
   <diagram name="第 1 页" id="LbF2RveD37fbFWJqfx2u">
-    <mxGraphModel>
+    <mxGraphModel dx="1290" dy="581" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="kWPSCi2pOkKSXBrAEDrC-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.013;entryY=0.57;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="kWPSCi2pOkKSXBrAEDrC-1" target="kWPSCi2pOkKSXBrAEDrC-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kWPSCi2pOkKSXBrAEDrC-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="kWPSCi2pOkKSXBrAEDrC-1" target="kWPSCi2pOkKSXBrAEDrC-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kWPSCi2pOkKSXBrAEDrC-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="kWPSCi2pOkKSXBrAEDrC-1" target="kWPSCi2pOkKSXBrAEDrC-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kWPSCi2pOkKSXBrAEDrC-1" value="用户" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kWPSCi2pOkKSXBrAEDrC-2" value="填写表单username&lt;br&gt;password&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="190" width="114" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="kWPSCi2pOkKSXBrAEDrC-4" value="访问localhost:8080/login.html" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="220" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kWPSCi2pOkKSXBrAEDrC-10" value="success.html&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kWPSCi2pOkKSXBrAEDrC-12" value="认证通过 ，重定向到指定页面" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="110" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="kWPSCi2pOkKSXBrAEDrC-13" value="error.html" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="450" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kWPSCi2pOkKSXBrAEDrC-15" value="认证不通过 ，重定向到error页面" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="120" y="310" width="120" height="50" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
